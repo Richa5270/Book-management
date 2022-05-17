@@ -224,7 +224,7 @@ const updateBook = async function (req, res) {
           return res.status(400).send({ Status: false, message: " ISBN must be as a string" })
       }
   }
-  let data = await bookModel.findById({_id:details})
+  let data = await bookModel.findById({_id:bookId})
   if (data.isDeleted === true) {
     return res
       .status(400)
@@ -287,7 +287,7 @@ const deleteBook = async function (req, res) {
   try {
     let bookId = req.params.bookId;
     details = req.body
-    if (Object.keys(details).length == 0) return res.status(400).send({ staus: false, message: "Invalid request. Please provide Details in body and update" });
+    
     let book = await bookModel.findById(bookId);
     if (!book) {
       return res
