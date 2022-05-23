@@ -7,7 +7,9 @@ const reviewController = require("../controllers/reviewController")
 const auth = require("../Middleware/auth")
 
 
+
 //signUp and login api
+router.post("/write-file-aws",bookController.uplodedCover)
 router.post("/register",userController.createUser)
 router.post("/login",userLogin.userLogin)
 //book api
@@ -21,6 +23,9 @@ router.delete("/books/:bookId",auth.authenti,auth.authoriz,bookController.delete
 router.post("/books/:bookId/reviews",reviewController.createReview)
 router.put("/books/:bookId/reviews/:reviewId",reviewController.updateReview)
 router.delete("/books/:bookId/reviews/:reviewId",reviewController.deleteReview)
+
+
+
 
 module.exports=router;
 
