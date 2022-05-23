@@ -9,7 +9,7 @@ const auth = require("../Middleware/auth")
 
 
 //signUp and login api
-router.post("/write-file-aws",bookController.uplodedCover)
+//router.post("/write-file-aws",bookController.uplodedCover)
 router.post("/register",userController.createUser)
 router.post("/login",userLogin.userLogin)
 //book api
